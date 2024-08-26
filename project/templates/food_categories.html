@@ -1,0 +1,36 @@
+{% include 'home_head.html' %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Food Categories</title>
+    <link rel="stylesheet" href="/static/css/categories.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card1">
+            <form action="food_categories_action" method="post">
+                <div class="card1-text">Food Categories</div>
+                    <div class="input-text">
+                        <label for="category_name" class="label">Category Name: </label><br>
+                        <input type="text" id="category_name"  name="category_name" class="input" placeholder="Enter Food Category Name" required>
+                    </div>
+                <input type="submit" class="button" value="Add Category">
+            </form>
+            <div>{{message}}</div>
+        </div>
+        <div class="card2">
+            <div class="card2-text">Food Categories List</div>
+            <ol class="list" type="1">
+                {% for food_category in food_categories %}
+                <li class="list-item">{{food_category['category_name']}}</li>
+                {% endfor %}
+            </ol>
+        </div>
+    </div>
+</body>
+</html>
+ 

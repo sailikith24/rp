@@ -1,0 +1,81 @@
+*{
+     box-sizing: border-box;
+     margin: 0px;
+     padding: 0px;
+     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+     text-decoration: none;
+}
+body{
+     background-color: rgb(48, 41, 41);
+}
+.container{
+     display: flex;
+     justify-content: space-around;
+     flex-wrap: wrap;
+}
+.container-item{
+     margin-top: 20px;
+}
+.card1{
+     width: 100%;
+     margin:25px;
+     padding:25px 50px;
+     background-color: rgba(10, 10, 10, 0.438);
+     border: 1px solid lightgray;
+     border-radius: 14px;
+}
+.card2{
+     padding:25px 50px;
+     border-radius: 14px;
+}
+.w-30{
+     width: 30%;
+}
+.w-60{
+     width: 60%;
+}
+.img{
+     width: 100%;
+     border-radius: 14px;
+}
+.text{
+     font-size:30px;
+     font-weight: bold;
+     text-align: center;
+     margin-bottom: 20px;
+     color: antiquewhite;
+}
+.input-text{
+     font-size: 25px;
+     color: antiquewhite;
+}
+.input{
+     width: 100%;
+     border: 1px solid lightgray;
+     box-shadow: 2PX solid black;
+     border-radius: 8px;
+     padding: 5px;
+     font-size: 18px;
+     margin-top: 20px;
+     margin-bottom: 15px;
+}
+.button{
+     border: 1px solid lightgray;
+     font-size: 18px;
+     padding: 10px 10px;
+     border-radius: 14px;
+     margin-bottom: 10px;
+     color:black;
+}
+.button:hover{
+     background-color: rgb(48, 41, 41);
+     color: white;
+     padding:10px;
+}
+.register_link{
+     font-size: 20px;
+     color: rgb(244, 247, 247);
+}
+.register_link a{
+     color: rgb(240, 163, 62);
+}

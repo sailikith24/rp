@@ -1,0 +1,59 @@
+*{
+    box-sizing: border-box;
+}
+.container-item{
+     display: flex;
+     flex-wrap: wrap;
+}
+.card{
+
+     margin: 20px;
+     padding:20px;
+     background-color: aliceblue;
+     border: 1px solid lightgray;
+}
+.card-label{
+     font-size: 20px;
+     font-weight: bold;
+     color: rgb(12, 9, 9);
+}
+.card-text{
+     font-size: 20px;
+     color:rgb(15, 13, 13);
+}
+.input{
+     padding: 10px;
+}
+.button{
+     font-size: 15px;
+     padding: 10px 10px;
+     border-radius: 14px;
+}
+.button:hover{
+     background-color:rgb(48, 41, 41) ;
+     color:white;
+     padding: 10px;
+
+}
+table, th, td{
+     width: 100%;
+     border:1px solid black;
+     border-collapse:collapse;
+}
+.table{
+     text-align: center;
+     padding: 5px;
+}
+tr:nth-child(even){
+     background-color: #D6EEEE;
+}
+th:nth-child(even),th:nth-child(even){
+     background-color: #D6EEEE;
+}
+a:hover {
+     color: white;
+     padding: 5px;
+     border-radius:10px;
+     background-color: royalblue;
+
+}   

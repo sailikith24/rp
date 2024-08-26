@@ -1,0 +1,36 @@
+{% include 'home_head.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Delivary Boy</title>
+    <link rel="stylesheet" href="/static/css/view.css">
+</head>
+<body>
+    <div class="card">
+        <table class=" table table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Phone Number</th>
+                    <th>Email</th>
+                    <th>Location</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for delivery_boy in delivery_boys %}
+            {% set locations = get_location_by_location_id(delivery_boy['location_id'])%}
+                <tr>
+                    <td>{{delivery_boy['name']}}</td>
+                    <td>{{delivery_boy['phone']}}</td>
+                    <td>{{delivery_boy['email']}}</td>
+                    <td>{{locations['location_name']}}</td>
+                    <td>{{delivery_boy['address']}}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

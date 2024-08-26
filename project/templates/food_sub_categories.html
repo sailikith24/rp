@@ -1,0 +1,63 @@
+{% include 'home_head.html' %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Food Sub categories</title>
+    <link rel="stylesheet" href="/static/css/categories.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card1">
+            <form action="food_sub_categories_action" method="post">
+                <div class="card1-text">Food Sub Categories</div>
+                <div class="input-text"><label>Food Categories: </label></div>
+                <select name="food_category_id" class="input" required>
+                    <option value="">Choose Food Category</option>
+                    {% for food_category in food_categories %}
+                    <option value="{{food_category['_id']}}">{{food_category['category_name']}}</option>
+                    {% endfor %}
+                </select>
+                <div>
+                    <label for="food_sub_category" class="input-text">Food Sub Category Name</label>
+                    <input type="text" id="food_sub_category"  name="food_sub_category_name" class="input" placeholder="Enter Food Sub Category Name" required>
+                </div>
+                <input type="submit" class="button" value="Add Sub Category">
+            </form>
+            <div>{{message}}</div>
+        </div>
+        <div class="card2">
+            <form action="food_sub_categories">
+                <div class="input-text"><label>Food Categories: </label></div>
+                <select name="food_category_id" class="input" required onchange="this.form.submit()">
+                    <option value="">Choose Food Category</option>
+                    {% for food_category in food_categories %}
+                    <option value="{{food_category['_id']}}" {% if str(food_category['_id']) == str(food_category_id) %} selected {% endif %}>{{food_category['category_name']}}</option>
+                    {% endfor %}
+                </select>
+            </form>
+            <div class="card2-text">Food Sub Categories List</div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Sub Category</th>
+                        <th>Category</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for food_sub_category in food_sub_categories %}
+                    {% set food_categories = get_food_category_by_category_id(food_sub_category['food_category_id']) %}
+                        <tr>
+                            <td>{{food_sub_category['food_sub_category_name']}}</td>
+                            <td>{{food_categories['category_name']}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

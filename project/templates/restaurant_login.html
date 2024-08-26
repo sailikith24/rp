@@ -1,0 +1,40 @@
+{% include 'head.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Login</title>
+    <link rel="stylesheet" href="/static/css/login.css">
+</head>
+<body>
+     <div class="container">
+          <div class="container-item w-30">
+               <div class="card1">
+                    <form action="restaurant_login_action" method="post">
+                         <div class="text">Restaurant Login</div>
+                              <div class="input-text">
+                                   <div>
+                                        <label for="email" class="label">Email: </label><br>
+                                        <input type="email" id="email"  name="email" class="input" placeholder="Enter Email" required>
+                                   </div>
+                                   <div>
+                                        <label for="password" class="label">Password: </label><br>
+                                        <input type="password" id="password"  name="password" class="input" placeholder="Enter Password" required>
+                                   </div>
+                              </div>
+                              <div><input type="submit" class="button" value="Login"></div>
+                    </form>
+                    <div class="register_link">
+                         New To Website? <a href="restaurant_registration" class="link">Register Now</a>
+                    </div>
+               </div>
+          </div>
+          <div class="container-item w-60">
+               <div class="card2">
+                    <img src="https://cdn.dribbble.com/users/6117646/screenshots/14637885/media/4956f4cf9c2430716fa77ef465db5c71.gif" class="img">
+               </div>
+          </div>    
+     </div>
+</body>
+</html>

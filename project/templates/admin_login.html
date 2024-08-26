@@ -1,0 +1,37 @@
+{% include 'head.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="/static/css/login.css">
+</head>
+<body>
+    <div class="container">
+        <div class="container-item w-30">
+            <div class="card1">
+                <form action="admin_login_action" method="post">
+                    <div class="text"> Admin Login</div>
+                        <div class="input-text">
+                            <div>
+                                <label for="username" class="label">Username: </label><br>
+                                <input type="text" id="username"  name="username" class="input" placeholder="Enter Username" required>
+                            </div>
+                            <div>
+                                <label for="password" class="label">Password: </label><br>
+                                <input type="password" id="password"  name="password" class="input" placeholder="Enter password" required>
+                            </div>
+                        </div>
+                    <input type="submit" class="button" value="Login">
+                </form>
+            </div>
+        </div>
+        <div class="container-item w-60">
+            <div class="card2">
+                <img src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/97b1d4bc028e3890ce75267deb159e95/24e71a4a26b5d319d6ac79ee_rw_600.gif?h=4c5ec98e37c4fea0b6776ef182152b43" class="img">
+            </div>
+        </div>    
+    </div>
+</body>
+</html>

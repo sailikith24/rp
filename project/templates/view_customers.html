@@ -1,0 +1,36 @@
+{% include 'home_head.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Customers</title>
+    <link rel="stylesheet" href="/static/css/view.css">
+</head>
+<body>
+    <div class="card">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Customer Name</th>
+                    <th>Phone Number</th>
+                    <th>Email</th>
+                    <th>Location</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for customer in customers %}
+            {% set locations = get_location_by_location_id(customer['location_id'])%}
+                <tr>
+                    <td>{{customer['name']}}</td>
+                    <td>{{customer['phone']}}</td>
+                    <td>{{customer['email']}}</td>
+                    <td>{{locations['location_name']}}</td>
+                    <td>{{customer['address']}}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

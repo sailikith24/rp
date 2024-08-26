@@ -1,0 +1,38 @@
+{% include 'home_head.html' %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Locations</title>
+    <link rel="stylesheet" href="/static/css/categories.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card1">
+            <form action="location_action" method="post">
+                <div class="card1-text">Locations</div>
+                    <div class="input-text">
+                        <label for="location_name" class="label">Location Name: </label><br>
+                        <input type="text" id="location_name"  name="location_name" class="input" placeholder="Enter Location Name" required>
+                    </div>
+                <input type="submit" class="button" value="Add Location">
+            </form>
+        </div>
+        <div class="card2">
+            <div class="card2-text">Locations List</div>
+            <table class="table">
+                <tbody>
+                {% for location in locations %}
+                <tr>
+                    <td>{{location['location_name']}}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

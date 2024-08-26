@@ -1,0 +1,51 @@
+{% include 'head.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivary Boy Registration</title>
+    <link rel="stylesheet" href="/static/css/registrations.css">
+</head>
+<body>
+     <div class="container">
+          <div class="card">
+               <form action="delivary_boy_registration_action" method="post">
+                    <div class="text">Delivary Boy Registration</div>
+                         <div class="form">
+                              <div class="form-item">
+                                   <label for="name" class="label">Name: </label><br>
+                                   <input type="text" id="name"  name="name" class="input" placeholder="Enter Name" required>
+                              </div>
+                              <div class="form-item">
+                                   <label for="phone" class="label">Phone Number: </label><br>
+                                   <input type="number" id="phone"  name="phone" class="input" placeholder="Enter Phone Nuber" required>
+                              </div>
+                              <div class="form-item">
+                                   <label for="email" class="label">Email: </label><br>
+                                   <input type="email" id="email"  name="email" class="input" placeholder="Enter Email" required>
+                              </div>
+                              <div class="form-item">
+                                   <label for="password" class="label">Password: </label><br>
+                                   <input type="password" id="password"  name="password" class="input" placeholder="Enter Password" required>
+                              </div>
+                              <div class="form-item">
+                                   <label>Locations: </label><br>
+                                   <select name="location_id" class="input" required>
+                                        <option value="">Choose location</option>
+                                        {% for location in locations %}
+                                        <option value="{{location['_id']}}">{{location['location_name']}}</option>
+                                        {% endfor %}
+                                   </select>
+                              </div>
+                              <div class="form-item">
+                                   <label for="address" class="label">Address: </label><br>
+                                   <textarea id="address"  name="address" class="input" placeholder="Enter Address" required></textarea>
+                              </div>
+                         </div>
+                         <input type="submit" class="button" value="Register">
+               </form>
+          </div> 
+     </div>
+</body>
+</html>
